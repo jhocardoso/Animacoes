@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>SVG</title>
+</head>
+<body>
+    <style>
+        body {
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .triangle {
+            stroke-dasharray: 17;
+            animation: dash 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;           
+        }
+
+        @keyframes dash {            
+            to {
+                stroke-dashoffset: 136;
+            }
+        }
+
+        .circle {
+            stroke-dasharray: 12;
+            animation: dash1 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;           
+        }
+
+        @keyframes dash1 {            
+            to {
+                stroke-dashoffset: 100;
+            }
+        }
+
+        
+
+        .loading {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 7px;
+            animation: blink 0.9s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .loading2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            animation: blink2 0.9s ease-in-out infinite;
+        }
+
+        @keyframes blink2 {
+            30% {
+                opacity: 0;
+            }
+        }
+
+    </style>
+
+    <svg width="200" height="200" viewBox="0 0 40 60">
+        <polygon class="triangle" fill="none" stroke="#fff" stroke-width="1" points="16,1 32,32 1,32"/>
+        <text class="loading" x="0" y="45" fill="#fff">Loading...</text>
+    </svg>
+
+    <svg width="200" height="200" >
+        <circle class="circle" fill="none" stroke="#fff" stroke-width="2" cx="50" cy="50" r="50"/>
+        <text class="loading2" x="10" y="130" fill="#fff">Loading...</text>
+    </svg>
+    
+</body>
+</html>
+
